@@ -2,7 +2,7 @@ import { useState } from "react";
 import useLetras from "../hooks/useLetras";
 
 const Formulario = () => {
-  const { setAlerta } = useLetras();
+  const { setAlerta,busquedaLetra } = useLetras();
   const [busqueda, setBusqueda] = useState({
     artista: "",
     cancion: "",
@@ -14,6 +14,7 @@ const Formulario = () => {
         setAlerta('Colaca nombre del artista y de la canción')
         return
     }
+    busquedaLetra(busqueda)
     setAlerta('')
   };
   return (
