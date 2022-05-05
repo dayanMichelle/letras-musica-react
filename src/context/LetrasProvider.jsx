@@ -1,10 +1,14 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 const LetrasContext = createContext();
 
 const LetrasProvider = ({ children }) => {
+    const [alerta,setAlerta]=useState('')
   return <LetrasContext.Provider 
-            value={{}}>
+            value={{
+                alerta,
+                setAlerta
+            }}>
       {children}
     </LetrasContext.Provider>;
 };
